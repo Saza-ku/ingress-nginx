@@ -1028,6 +1028,8 @@ stream {
         {{ template "CUSTOM_ERRORS" (buildCustomErrorDeps $errorLocation.UpstreamName $errorLocation.Codes $all.EnableMetrics $all.Cfg.EnableModsecurity) }}
         {{ end }}
 
+        client_header_timeout {{ $server.ClientHeaderTimeout }}
+
         {{ buildMirrorLocations $server.Locations }}
 
         {{ $enforceRegex := enforceRegexModifier $server.Locations }}

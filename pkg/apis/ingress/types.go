@@ -197,7 +197,8 @@ type Server struct {
 	// Aliases return the alias of the server name
 	Aliases []string `json:"aliases,omitempty"`
 	// RedirectFromToWWW returns if a redirect to/from prefix www is required
-	RedirectFromToWWW bool `json:"redirectFromToWWW,omitempty"`
+	RedirectFromToWWW   bool `json:"redirectFromToWWW,omitempty"`
+	ClientHeaderTimeout int
 	// CertificateAuth indicates the this server requires mutual authentication
 	// +optional
 	CertificateAuth authtls.Config `json:"certificateAuth"`
